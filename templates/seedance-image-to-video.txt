@@ -1,0 +1,6 @@
+REFERENCE: Use the supplied image as the visual source of truth. One continuous shot.
+PRESERVE: [approved image asset/version; identity; wardrobe; props; set; composition; lighting; medium]
+TRANSFORM: [one primary action; performance beat; camera move; secondary/environmental motion]
+TIMING / END STATE: [start state → action beats → settle/end state]
+AUDIO (OPTIONAL): [speaker; exact dialogue; pauses; ambience; music; audio asset/version]
+AVOID: [identity drift; substitutions; geometry warping; unwanted cuts; flicker; artifacts]

@@ -1,0 +1,20 @@
+schema_version: 1
+take:
+  id: "TAKE-EP-01-SC-01-SH-01-001"
+  episode_id: "EP-01"
+  scene_id: "SC-01"
+  shot_id: "SH-01"
+  status: generated
+  image_prompt_version: "IMG-PROMPT_v01"
+  source_image_id: "REF-EP01-SC01-SH01_v01"
+  source_image_status: approved
+  engine: "Seedance"
+  model_version: ""
+  video_prompt_version: "VID-PROMPT_v01"
+  generation_settings: {duration_seconds: "", aspect_ratio: "", resolution: "", seed: "", interface: ""}
+  output_take_id: ""
+  observed_continuity_failures: []
+  approval_status: pending
+  audio: {asset_id: "", dialogue: "", speaker: "", lip_sync: pending, ambience: "", music: ""}
+  created_at: ""
+  notes: ""

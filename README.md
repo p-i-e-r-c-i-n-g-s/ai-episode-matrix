@@ -23,6 +23,7 @@ The reference image acts as the visual anchor. The skill tells the video tool wh
 - Build connected scenes and full episodes instead of unrelated clips.
 - Return to Episode 5—or any earlier installment—with a continuity checkpoint before creating new material.
 - Adapt the same creative idea for different AI generation tools.
+- Hand off an approved ChatGPT-generated still to Seedance with explicit preserve/transform instructions.
 - Maintain script versions, continuity reports, lore, canon, and production handoffs.
 
 ## Five modes inside Episode Matrix
@@ -141,6 +142,7 @@ Restart Codex or refresh its skills index afterward.
 - `references/script-supervisor-system.md` — production continuity, script tracking, lore, and handoffs
 - `agents/openai.yaml` — Codex interface metadata
 - `references/` — detailed guidance for styles, continuity, episodes, motion, and platform adaptation
+- `templates/seedance-image-to-video.txt` and `templates/video-take.yaml` — Seedance prompt and generated-take records
 - `examples/` — copy-pasteable example prompts
 
 Platform syntax changes over time. The skill deliberately separates the creative specification from engine-specific translation and marks unsupported or unverified controls.

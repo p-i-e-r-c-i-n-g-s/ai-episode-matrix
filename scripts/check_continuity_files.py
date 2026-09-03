@@ -73,6 +73,20 @@ for asset in asset_records:
         errors.append(f"INVALID asset-index.yaml: unsupported status for {asset.get('id', '?')}")
 if ledger and not isinstance(ledger.get("unresolved"), list):
     errors.append("INVALID continuity-ledger.yaml: unresolved must be a list")
+for path in sorted(ROOT.glob("video-take-*.yaml")):
+    take_record = load(path.name)
+    take = take_record.get("take")
+    required_take_fields = ("id", "episode_id", "shot_id", "image_prompt_version", "source_image_id", "model_version", "video_prompt_version", "generation_settings", "output_take_id", "observed_continuity_failures", "approval_status")
+    if not isinstance(take, dict):
+        errors.append(f"INVALID {path.name}: missing take mapping")
+        continue
+    for field in required_take_fields:
+        if field not in take:
+            errors.append(f"INVALID {path.name}: missing take.{field}")
+    if take.get("approval_status") not in {"pending", "approved", "rejected", "revise"}:
+        errors.append(f"INVALID {path.name}: unsupported approval_status")
+    if not isinstance(take.get("generation_settings"), dict):
+        errors.append(f"INVALID {path.name}: generation_settings must be a mapping")
 for error in errors:
     print(error)
 if errors:

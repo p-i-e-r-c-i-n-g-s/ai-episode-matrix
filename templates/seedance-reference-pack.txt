@@ -1,0 +1,6 @@
+@Image1 = [approved start image: appearance, composition, lighting]
+@Image2 = [optional character/location/style reference: exact role]
+@Video1 = [optional motion/camera reference: trajectory and timing only]
+@Audio1 = [optional dialogue/music/ambience reference: timing and emotional role only]
+PRIORITY: [identity/continuity > start-image composition > motion > audio > flexible style]
+UNVERIFIED: [controls or reference syntax not confirmed for the selected interface]
