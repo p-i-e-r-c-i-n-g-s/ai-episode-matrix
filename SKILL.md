@@ -15,14 +15,23 @@ Assume the user usually wants a ChatGPT-generated image first, followed by image
 
 Never rewrite the image-to-video prompt as if the engine must recreate the scene from text alone. Explicitly instruct it to preserve the selected image's identity, composition, production design, palette, lighting, wardrobe, and lens perspective, then describe the desired change. If an image is actually attached or available, inspect it before drafting motion instructions; if it is not available, create the image-base prompt first and identify what must be checked after generation.
 
+If the user invokes `episode mode`, treat it as the session's top-level operating mode. Activate the continuity bible before drafting any image or video prompt, and keep it active for the entire session. Episode mode is for connected storytelling, not unrelated clips.
+
 ## Four operating modes
 
 1. **Image-base mode** — create the still image that will serve as the visual anchor. Define subject identity, pose, expression, environment, art direction, composition, lens perspective, lighting, palette, and output ratio. Keep the image prompt focused on a single decisive frame; do not describe motion that belongs in the next mode.
 2. **Image-to-video mode** — animate the selected image. Separate `preserve` from `animate`: preserve identity, costume, set, composition, and style; animate performance, camera, atmosphere, and physically motivated secondary motion. Specify start state, action beats, camera path, temporal pacing, end state, and unwanted changes. This is the default mode when the user says “make this image move,” “animate this,” or provides a reference image.
 3. **Director mode** — apply a director's formal system to the image-base or image-to-video prompt. The director influences framing, movement, lighting, blocking, pacing, sound, and production design, but does not replace the user's subject or story.
 4. **Movie mode** — apply a specific film or franchise's scene grammar. Identify whether it is homage, close emulation, or continuation, then translate motif, period, palette, camera, editorial rhythm, and sound into original, concrete choices.
+5. **Episode mode** — build or continue a connected episode using a series bible, episode arc, scene states, asset inventory, and continuity ledger. This mode composes the other modes.
 
 Modes can be composed: `image-base + director`, then `image-to-video + movie`. Always state the active mode(s) in the output.
+
+### Episode-mode startup
+
+At the beginning of an episode-mode session, determine whether this is a new series, a new episode, or a return to an existing episode/series. Ask for the latest bible, episode plan, ledger, last approved shot, or relevant reference assets. For returning work, reconstruct and display a continuity checkpoint before proposing new shots. Never invent missing prior events or states; label them `[UNRESOLVED]` and ask only high-impact questions.
+
+The checkpoint must include series and episode ID, last known story state, next narrative goal, returning characters, wardrobe/prop states, location/time/weather/light, visual contract, available assets, and unresolved questions. Once confirmed, every prompt inherits it and records its next state.
 
 ## Earliest-use testing protocol
 
@@ -56,6 +65,7 @@ Choose the smallest useful mode:
 4. **Prompt refinement** — preserve locked details, identify conflicts, and revise only requested dimensions.
 5. **Director mode** — emulate a director's formal system through observable choices, not a name-only style tag.
 6. **Movie mode** — emulate a specific film or franchise's visual grammar, motifs, pacing, and continuity constraints.
+7. **Episode mode** — plan and generate connected scenes with persistent story and visual state.
 
 ## Director mode
 
@@ -104,6 +114,8 @@ If the user did not specify a model, make a model-agnostic prompt and state that
 Ask no more than 1–2 high-value questions at a time. If enough information exists, proceed with labeled assumptions. Offer concrete visual choices with consequences, e.g. “35mm puts the viewer inside the space; 85mm compresses the background and isolates the face.” Do not force a questionnaire when a strong draft can reveal what needs deciding.
 
 For a sequence, maintain a continuity table and a shot-to-shot motion/edit map. For a single image-to-video prompt, explicitly distinguish what must remain unchanged from what should move.
+
+For episodic work, build the episode plan before individual prompts. Establish a series bible, episode arc, recurring assets, and continuity ledger; assign stable IDs to episodes, scenes, shots, characters, props, and locations. Every prompt must inherit from the active ledger and record what changed.
 
 For episodic work, build the episode plan before individual prompts. Establish a series bible, episode arc, recurring assets, and a continuity ledger; assign stable IDs to episodes, scenes, shots, characters, props, and locations. Every new image or video prompt must inherit from the current ledger and explicitly record what changed.
 

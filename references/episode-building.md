@@ -1,6 +1,36 @@
 # Continuity and episode building
 
-Use this reference when the user wants multiple connected clips, an episode, a season, or a repeatable visual world. The goal is to make every generated shot inherit the same world state while still allowing deliberate evolution.
+Use this reference when the user wants multiple connected clips, an episode, a season, or a repeatable visual world. When `episode mode` is invoked, load this reference immediately. The goal is to make every generated shot inherit the same world state while still allowing deliberate evolution.
+
+## Session entry
+
+Classify the session before generation:
+
+```text
+NEW SERIES → create series bible → define episode 1
+NEW EPISODE → load series bible → define episode blueprint
+RETURNING EPISODE → load latest checkpoint/ledger → confirm next goal
+RETURNING SERIES → identify episode and last approved state → resume
+```
+
+Ask for existing files or notes first. Ask 1–2 questions at a time, but do not generate a dependent shot until the minimum checkpoint is known or explicitly marked unresolved.
+
+### Minimum continuity checkpoint
+
+```text
+SERIES: [name / ID]
+EPISODE: [number / title]
+LAST APPROVED STATE: [story, character, prop, location state]
+NEXT GOAL: [what this session must accomplish]
+RETURNING CHARACTERS: [IDs and current states]
+CURRENT PROPS: [IDs, owners, damage, placement]
+WORLD STATE: [location, time, weather, light]
+VISUAL CONTRACT: [format, lens family, palette, grammar]
+AVAILABLE ASSETS: [images, clips, audio, designs]
+UNRESOLVED: [questions that could change the next shot]
+```
+
+Show the checkpoint for confirmation or correction, then store it as active session state.
 
 ## Production hierarchy
 
@@ -91,15 +121,17 @@ The next prompt must inherit the `NEXT REQUIRED STATE`. Never silently reset war
 
 ## Episode workflow
 
-1. Define the series bible and visual contract.
-2. Define the episode’s beginning state, ending state, and arc beats.
-3. Break the episode into scenes with purpose and entry/exit states.
-4. Assign stable IDs and build the continuity ledger.
-5. Generate one reference image per major setup, inheriting the bible.
-6. Animate short image-to-video tests, preserving the approved setup.
-7. Approve shots individually and update the ledger after each approval.
-8. Build transitions using match-on-action, eyeline, screen direction, sound lead/lag, or a deliberate state change.
-9. Run a continuity audit before assembling the episode.
+1. Enter episode mode and classify new versus returning work.
+2. Load or create the series bible and show the continuity checkpoint.
+3. Confirm the episode’s beginning state, ending state, next goal, and arc beats.
+4. Inventory reference images, clips, audio, designs, and prior outputs.
+5. Break the episode into scenes with purpose and entry/exit states.
+6. Assign stable IDs and build the continuity ledger.
+7. Generate one reference image per major setup, inheriting the bible.
+8. Animate short image-to-video tests, preserving the approved setup.
+9. Approve shots individually and update the ledger after each approval.
+10. Build motivated transitions between shots and scenes.
+11. Run a continuity audit before assembling the episode.
 
 ## Continuity audit
 
@@ -129,3 +161,7 @@ NEXT STATE: [what the following shot must receive]
 ```
 
 This block may be rendered as metadata, a production note, or concise prompt prose depending on the target platform.
+
+## Session handoff
+
+End an episode-mode session with a resumable handoff: last approved shot, updated character/prop/world states, unresolved questions, next recommended shot, and asset references. This becomes the next session's checkpoint.

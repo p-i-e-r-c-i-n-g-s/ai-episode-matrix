@@ -21,6 +21,7 @@ The reference image acts as the visual anchor. The skill tells the video tool wh
 - Control camera movement, lenses, lighting, film texture, flash, grain, and color.
 - Keep characters, props, locations, wardrobe, and lighting consistent.
 - Build connected scenes and full episodes instead of unrelated clips.
+- Return to Episode 5—or any earlier installment—with a continuity checkpoint before creating new material.
 - Adapt the same creative idea for different AI generation tools.
 
 ## Four modes
@@ -33,7 +34,9 @@ The reference image acts as the visual anchor. The skill tells the video tool wh
 
 **Movie** — Create an original homage, close emulation, or continuation-style scene based on a film or franchise’s visual language.
 
-Modes can be combined. For example: create an image with `image-base + director`, then animate it with `image-to-video + movie`.
+**Episode** — Start or continue a connected story. The skill activates the continuity bible immediately, tracks what has happened, and makes each new scene inherit the correct characters, props, locations, wardrobe, lighting, and story state.
+
+Modes can be combined. For example: use `episode + image-base + director`, then continue with `episode + image-to-video + movie`.
 
 ## Building episodes
 
