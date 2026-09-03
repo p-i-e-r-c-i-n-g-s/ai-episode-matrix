@@ -45,6 +45,9 @@ class SkillContractTests(unittest.TestCase):
         for mode in ("Image-base mode", "Image-to-video mode", "Director mode", "Movie mode", "Episode mode"):
             self.assertIn(mode, text)
 
+    def test_cinematography_reference_is_routed(self):
+        self.assertIn("cinematography-discipline.md", self.read("SKILL.md"))
+
 
 if __name__ == "__main__":
     unittest.main()

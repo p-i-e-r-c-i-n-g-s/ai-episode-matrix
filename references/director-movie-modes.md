@@ -42,6 +42,21 @@ Use the profile for elastic physical comedy, saturated comic-book color, exagger
 
 Use the profile for period-fantasy production design, candlelit/warm practical interiors balanced with cool atmospheric exteriors, institutional architecture, magical reveal timing, ensemble eyelines, and evolving tonal maturity across installments. Specify which era/tone is wanted; the franchise is not one uniform visual style.
 
+### Additional supplied profiles
+
+- **Tim Burton** — ultra-wide low-angle distortion, theatrical blocking, gothic asymmetry, chiaroscuro, cool moonlight against toxic color accents, tactile handmade materials, and deliberate staccato motion.
+- **Quentin Tarantino** — exploitation/spaghetti-western energy, low angles, crash zooms, split diopters, saturated warm color, long tracking movement, and sharply punctuated action.
+- **Akira Kurosawa** — painterly deep-focus geometry, compressed or landscape-scale space, axial coverage, forceful lateral movement, triangular blocking, and constant wind/rain/dust.
+- **Agnès Varda** — humanist documentary hybridity, eye-level observation, direct address, natural light, vibrant everyday color, curious wandering camera, and collage-like rhythm.
+- **Coen brothers** — deadpan locked framing, wide lenses close to faces, precise practical light, bleak or dusty palettes, creeping pushes, and uncomfortable holds.
+- **Hayao Miyazaki** — expansive nature framing, negative-space pauses, wind and water physics, gentle settling motion, luminous painted environments, and organic mechanical weight.
+- **Brad Bird** — readable action geography, camera physics translated into animation, scale contrast, rack focus/whip pans, and clear momentum with cause and effect.
+- **Walt Disney classical animation** — multiplane depth, centered staging, soft glowing color, squash-and-stretch arcs, flowing follow-through, and musical movement timing.
+- **Wes Anderson** — bilateral symmetry, planar staging, overhead tableaus, pastel high-key light, rigid lateral tracks, and deliberate theatrical blocking.
+- **James Cameron** — deep z-axis spectacle, industrial or underwater scale, forward momentum, heavy machinery, cyan/steel versus warm fire, and water/particle physics.
+
+These are formal starting points. Select a few traits that serve the user's scene; do not stack every signature into one prompt.
+
 ## Required output additions
 
 For `director mode`, add:

@@ -19,6 +19,7 @@ The reference image acts as the visual anchor. The skill tells the video tool wh
 - Choose a director-inspired visual approach.
 - Create a movie or franchise homage with original characters and scenes.
 - Control camera movement, lenses, lighting, film texture, flash, grain, and color.
+- Translate director references into concrete camera, lighting, blocking, and physics choices.
 - Keep characters, props, locations, wardrobe, and lighting consistent.
 - Build connected scenes and full episodes instead of unrelated clips.
 - Return to any earlier episode with a continuity checkpoint before creating new material.
@@ -142,6 +143,7 @@ Restart Codex or refresh its skills index afterward.
 - `WORKFLOW.md` — newcomer workflow chart and integration guide
 - `references/episode-building.md` — series bibles, episode blueprints, and continuity ledgers
 - `references/script-supervisor-system.md` — production continuity, script tracking, lore, and handoffs
+- `references/cinematography-discipline.md` — practical camera, lighting, blocking, physics, and optics vocabulary
 - `agents/openai.yaml` — Codex interface metadata
 - `references/` — detailed guidance for styles, continuity, episodes, motion, and platform adaptation
 - `templates/seedance-image-to-video.txt` and `templates/video-take.yaml` — Seedance prompt and generated-take records

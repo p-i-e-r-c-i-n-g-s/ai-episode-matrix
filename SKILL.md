@@ -133,6 +133,7 @@ Before declaring an episode complete, run the acceptance gate in [episode-buildi
 
 - Read [parameter-schema.md](references/parameter-schema.md) when building or auditing structured prompts.
 - Read [shot-language.md](references/shot-language.md) when the user needs film-specific vocabulary or alternatives.
+- Read [cinematography-discipline.md](references/cinematography-discipline.md) when a shot needs precise camera, light, blocking, physics, or optical decisions.
 - Read [reference-notes.md](references/reference-notes.md) for the supplied open-source references and the design ideas derived from them.
 - Read [director-movie-modes.md](references/director-movie-modes.md) for the attached JSON-derived director and movie/franchise style library.
 - Read [reference-image-analysis.md](references/reference-image-analysis.md) before writing image-to-video instructions for an available image.
