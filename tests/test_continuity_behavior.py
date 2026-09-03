@@ -47,6 +47,30 @@ class ContinuityBehaviorTests(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn("NEXT ACTION", result.stdout)
 
+    def test_scanner_rejects_empty_handoff(self):
+        with tempfile.TemporaryDirectory() as directory:
+            target = pathlib.Path(directory)
+            for name in ("series-bible.yaml", "continuity-ledger.yaml", "asset-index.yaml"):
+                shutil.copy(ROOT / "templates" / name, target / name)
+            shutil.copy(ROOT / "tests/fixtures/episode-05.yaml", target / "episode-05.yaml")
+            (target / "session-handoff.md").write_text("\n")
+            result = subprocess.run(["python3", str(ROOT / "scripts/check_continuity_files.py"), directory], capture_output=True, text=True)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("session-handoff.md", result.stdout)
+
+    def test_scanner_reports_malformed_nested_records(self):
+        with tempfile.TemporaryDirectory() as directory:
+            target = pathlib.Path(directory)
+            for name in ("series-bible.yaml", "continuity-ledger.yaml", "asset-index.yaml"):
+                shutil.copy(ROOT / "templates" / name, target / name)
+            shutil.copy(ROOT / "templates/session-handoff.md", target / "session-handoff.md")
+            (target / "episode-05.yaml").write_text("episode: []\n")
+            (target / "asset-index.yaml").write_text("assets: [bad-record]\n")
+            result = subprocess.run(["python3", str(ROOT / "scripts/check_continuity_files.py"), directory], capture_output=True, text=True)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("episode-05.yaml", result.stdout)
+        self.assertIn("asset-index.yaml", result.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -20,7 +20,11 @@ def load(name):
         errors.append(f"MISSING {name}")
         return {}
     if path.suffix == ".md":
-        return {"text": path.read_text()}
+        text = path.read_text()
+        if not text.strip():
+            errors.append(f"INVALID {name}: file is empty")
+            return {}
+        return {"text": text}
     try:
         value = yaml.safe_load(path.read_text())
         if not isinstance(value, dict):
@@ -38,16 +42,23 @@ handoff = load("session-handoff.md")
 episode_data = []
 for path in sorted(ROOT.glob("episode-*.yaml")):
     data = load(path.name)
-    if "episode" not in data:
+    if not isinstance(data.get("episode"), dict):
         errors.append(f"INVALID {path.name}: missing episode mapping")
     elif data["episode"].get("status") not in STATUSES:
         errors.append(f"INVALID {path.name}: unsupported episode status")
     episode_data.append(data)
-if series and "series" not in series:
+if series and not isinstance(series.get("series"), dict):
     errors.append("INVALID series-bible.yaml: missing series mapping")
 if ledger and "episode_id" not in ledger:
     errors.append("INVALID continuity-ledger.yaml: missing episode_id")
-for asset in assets.get("assets", []) if isinstance(assets.get("assets", []), list) else []:
+asset_records = assets.get("assets", [])
+if not isinstance(asset_records, list):
+    errors.append("INVALID asset-index.yaml: assets must be a list")
+    asset_records = []
+for asset in asset_records:
+    if not isinstance(asset, dict):
+        errors.append("INVALID asset-index.yaml: every asset must be a mapping")
+        continue
     if not asset.get("id") or not asset.get("version"):
         errors.append("INVALID asset-index.yaml: every asset needs id and version")
     if asset.get("status") and asset["status"] not in STATUSES:
@@ -56,7 +67,8 @@ for error in errors:
     print(error)
 if errors:
     raise SystemExit(1)
-print(f"SERIES: {series.get('series', {}).get('id', '?')}")
+series_info = series.get("series") if isinstance(series.get("series"), dict) else {}
+print(f"SERIES: {series_info.get('id', '?')}")
 print(f"EPISODES: {', '.join(d.get('episode', {}).get('id', '?') for d in episode_data) or 'none'}")
 print(f"LATEST APPROVED SHOT: {ledger.get('latest_approved_shot') or 'none recorded'}")
 print(f"UNRESOLVED ITEMS: {len(ledger.get('unresolved', []))}")
