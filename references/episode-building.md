@@ -2,6 +2,20 @@
 
 Use this reference when the user wants multiple connected clips, an episode, a season, or a repeatable visual world. When `episode mode` is invoked, load this reference immediately. The goal is to make every generated shot inherit the same world state while still allowing deliberate evolution.
 
+## Durable project records
+
+Use these filenames so later sessions can resume without relying on chat history:
+
+```text
+series-bible.yaml
+episode-05.yaml
+continuity-ledger.yaml
+asset-index.yaml
+session-handoff.md
+```
+
+On startup, scan for these files, match the requested series/episode, and load the latest approved records. File existence is not approval; preserve explicit status fields.
+
 ## Session entry
 
 Classify the session before generation:
@@ -74,6 +88,10 @@ props:
     continuity_rules: ""
 ```
 
+## Asset identity and versioning
+
+Give every reusable asset a stable ID and immutable version, such as `CHAR-01_v03`, `PROP-07_v02`, `LOC-02_DUSK_v01`, or `REF-EP05-SC03-SH02_v04`. Record source, status (`proposed`, `approved`, `rejected`, `superseded`), and what changed. Prompts must name the exact version they inherit.
+
 The `visual contract` describes what should remain recognizable across episodes: framing tendencies, lens family, movement language, color, texture, sound relationship, and title/graphic treatment. Keep it separate from episode-specific variation.
 
 ## Episode blueprint
@@ -119,6 +137,17 @@ NEXT REQUIRED STATE: sleeve remains torn; prop transfers to CHAR-02
 
 The next prompt must inherit the `NEXT REQUIRED STATE`. Never silently reset wardrobe, damage, weather, prop position, eyelines, geography, or emotional state between shots.
 
+## State transitions
+
+```text
+planned → generated → reviewed → approved
+                         ├── revise → generated
+                         ├── rejected
+                         └── unresolved
+```
+
+Only `approved` state propagates as canon. A generated result is not canon until the user approves it.
+
 ## Episode workflow
 
 1. Enter episode mode and classify new versus returning work.
@@ -147,6 +176,10 @@ Check every adjacent shot and every scene boundary for:
 
 Classify each discrepancy as `intentional`, `repair`, or `unresolved`. Do not call an episode complete while required continuity is unresolved.
 
+## Episode acceptance gate
+
+An episode is complete only when every required scene has approved or intentionally omitted shots; beginning and ending states are recorded; character, wardrobe, prop, location, lighting, dialogue, and canon continuity have no unresolved required breaks; runtime, assets, and audio status are recorded; the arc has meaningful change; and a session handoff exists.
+
 ## Prompt inheritance block
 
 For each shot in an episode, prepend or internally maintain:
@@ -161,6 +194,10 @@ NEXT STATE: [what the following shot must receive]
 ```
 
 This block may be rendered as metadata, a production note, or concise prompt prose depending on the target platform.
+
+## Session handoff
+
+End an episode-mode session with the current script version, last approved shot, updated character/prop/world states, approved and unresolved changes, asset references, estimated runtime, and next recommended shot. This becomes the next session's checkpoint.
 
 ## Session handoff
 

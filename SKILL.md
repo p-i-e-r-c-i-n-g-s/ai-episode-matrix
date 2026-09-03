@@ -21,6 +21,8 @@ Never rewrite the image-to-video prompt as if the engine must recreate the scene
 
 If the user invokes `episode mode`, treat it as the session's top-level operating mode. Activate the continuity bible before drafting any image or video prompt, and keep it active for the entire session. Episode mode is for connected storytelling, not unrelated clips.
 
+At episode-mode startup, scan the working directory for `series-bible.yaml`, `episode-*.yaml`, `continuity-ledger.yaml`, `asset-index.yaml`, and `session-handoff.md`. Load the relevant records, report what was found, and show a continuity checkpoint before generating. If no records exist, create a proposed starter set and ask for confirmation before treating it as canon.
+
 In episode mode, behave like a script supervisor: compare every proposed shot against the current script, continuity bible, prior approved material, and next-state requirements. Track visual, behavioral, dialogue, timing, and story continuity. Separate what was planned, what was generated, what was approved, and what remains unresolved.
 
 ## Four operating modes
@@ -124,6 +126,8 @@ For a sequence, maintain a continuity table and a shot-to-shot motion/edit map. 
 For episodic work, build the episode plan before individual prompts. Establish a series bible, episode arc, recurring assets, and continuity ledger; assign stable IDs to episodes, scenes, shots, characters, props, and locations. Every prompt must inherit from the active ledger and record what changed.
 
 For episodic work, build the episode plan before individual prompts. Establish a series bible, episode arc, recurring assets, and a continuity ledger; assign stable IDs to episodes, scenes, shots, characters, props, and locations. Every new image or video prompt must inherit from the current ledger and explicitly record what changed.
+
+Before declaring an episode complete, run the acceptance gate in [episode-building.md](references/episode-building.md). A generated result is not approved canon until the user approves it; an unresolved continuity break prevents completion.
 
 ## Supporting references
 
