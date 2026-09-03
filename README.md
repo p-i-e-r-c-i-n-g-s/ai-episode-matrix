@@ -89,30 +89,33 @@ The first test should use one subject, one main action, one camera move, and one
 
 ```mermaid
 flowchart TD
-    A[Raw concept] --> B{Have a reference image?}
-    B -- No --> C[Image-base mode]
-    C --> D[Generate ChatGPT image]
-    D --> E[Select and inspect image]
-    B -- Yes --> E
-    E --> F{Need a formal style?}
-    F -- Director --> G[Director mode]
-    F -- Movie or franchise --> H[Movie mode]
-    F -- No --> I[Keep user's visual intent]
-    G --> J[Image-to-video mode]
-    H --> J
-    I --> J
-    J --> K[Preserve reference + animate chosen changes]
-    K --> L[Short test clip]
-    L --> M{What failed?}
-    M -- Identity/composition --> N[Strengthen preserve instructions]
-    M -- Motion/physics --> O[Reduce or clarify motion layers]
-    M -- Camera --> P[Specify one motivated camera path]
-    M -- Style --> Q[Make visual style decisions concrete]
-    N --> L
-    O --> L
-    P --> L
-    Q --> L
-    M -- Works --> R[Increase complexity or build sequence]
+    A[Raw concept] --> A2{Building a connected story?}
+    A2 -- Yes --> C[Episode mode: create or load checkpoint]
+    A2 -- No --> B{Have a reference image?}
+    C --> B
+    B -- No --> D[Image-base mode]
+    D --> E[Generate ChatGPT image]
+    E --> F[Select and inspect image]
+    B -- Yes --> F
+    F --> G{Need a formal style?}
+    G -- Director --> H[Director mode]
+    G -- Movie or franchise --> I[Movie mode]
+    G -- No --> J[Keep user's visual intent]
+    H --> K[Image-to-video mode]
+    I --> K
+    J --> K
+    K --> L[Preserve reference + animate chosen changes]
+    L --> M[Short test clip]
+    M --> N{What failed?}
+    N -- Identity/composition --> O[Strengthen preserve instructions]
+    N -- Motion/physics --> P[Reduce or clarify motion layers]
+    N -- Camera --> Q[Specify one motivated camera path]
+    N -- Style --> R[Make visual style decisions concrete]
+    O --> M
+    P --> M
+    Q --> M
+    R --> M
+    N -- Works --> S[Increase complexity or build sequence]
 ```
 
 ## Install globally
