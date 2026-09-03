@@ -21,6 +21,36 @@ It also includes platform-adapter guidance, aesthetic knobs, multi-shot continui
 
 Start with [WORKFLOW.md](WORKFLOW.md) for the visual decision chart, first-test recipe, and integration guidance.
 
+## Workflow at a glance
+
+```mermaid
+flowchart TD
+    A[Raw concept] --> B{Have a reference image?}
+    B -- No --> C[Image-base mode]
+    C --> D[Generate ChatGPT image]
+    D --> E[Select and inspect image]
+    B -- Yes --> E
+    E --> F{Need a formal style?}
+    F -- Director --> G[Director mode]
+    F -- Movie or franchise --> H[Movie mode]
+    F -- No --> I[Keep user's visual intent]
+    G --> J[Image-to-video mode]
+    H --> J
+    I --> J
+    J --> K[Preserve reference + animate chosen changes]
+    K --> L[Short test clip]
+    L --> M{What failed?}
+    M -- Identity/composition --> N[Strengthen preserve instructions]
+    M -- Motion/physics --> O[Reduce or clarify motion layers]
+    M -- Camera --> P[Specify one motivated camera path]
+    M -- Style --> Q[Make visual style decisions concrete]
+    N --> L
+    O --> L
+    P --> L
+    Q --> L
+    M -- Works --> R[Increase complexity or build sequence]
+```
+
 ## Install globally
 
 Copy this folder into your Codex skills directory:
