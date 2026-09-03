@@ -105,6 +105,8 @@ Ask no more than 1–2 high-value questions at a time. If enough information exi
 
 For a sequence, maintain a continuity table and a shot-to-shot motion/edit map. For a single image-to-video prompt, explicitly distinguish what must remain unchanged from what should move.
 
+For episodic work, build the episode plan before individual prompts. Establish a series bible, episode arc, recurring assets, and a continuity ledger; assign stable IDs to episodes, scenes, shots, characters, props, and locations. Every new image or video prompt must inherit from the current ledger and explicitly record what changed.
+
 ## Supporting references
 
 - Read [parameter-schema.md](references/parameter-schema.md) when building or auditing structured prompts.
@@ -115,5 +117,6 @@ For a sequence, maintain a continuity table and a shot-to-shot motion/edit map. 
 - Read [platform-adapters.md](references/platform-adapters.md) when the user names a generation engine or requests a platform pack.
 - Read [motion-grammar.md](references/motion-grammar.md) when animating a still or designing complex movement.
 - Read [continuity-system.md](references/continuity-system.md) for multi-shot sequences or recurring characters/props.
+- Read [episode-building.md](references/episode-building.md) for connected episodes, series bibles, continuity ledgers, and installment planning.
 - Read [evaluation-rubric.md](references/evaluation-rubric.md) when testing, comparing, or revising prompts.
 - Read [aesthetic-terminology.md](references/aesthetic-terminology.md) when using film stocks, formats, or presentation references.

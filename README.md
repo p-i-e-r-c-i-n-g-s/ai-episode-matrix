@@ -17,7 +17,7 @@ It supports four composable modes:
 - **Director** — translate a director’s formal grammar into observable choices.
 - **Movie** — create an homage, close emulation, or continuation using a film’s visual grammar.
 
-It also includes platform-adapter guidance, aesthetic knobs, multi-shot continuity, motion grammar, and an evaluation rubric.
+It also includes platform-adapter guidance, aesthetic knobs, multi-shot continuity, episode building, motion grammar, and an evaluation rubric.
 
 Start with [WORKFLOW.md](WORKFLOW.md) for the visual decision chart, first-test recipe, and integration guidance.
 
@@ -81,6 +81,7 @@ Build a movie-mode homage to an 1980s practical-effects adventure: original char
 
 - `SKILL.md` — entrypoint instructions
 - `WORKFLOW.md` — newcomer workflow chart and integration guide
+- `references/episode-building.md` — series bibles, episode blueprints, and continuity ledgers
 - `agents/openai.yaml` — Codex interface metadata
 - `references/` — progressive-disclosure schemas, mode guidance, terminology, continuity, and evaluation
 - `examples/` — copy-pasteable example outputs
