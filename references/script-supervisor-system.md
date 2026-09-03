@@ -22,6 +22,26 @@ Track script versions, revision history, page/scene changes, delivery formatting
 
 Capture and organize premise ideas, room decisions, dialogue alternatives, beat sheets, episode outlines, character lore, and open story questions. Distinguish approved canon from pitches and discarded ideas.
 
+### Dialogue and audio record
+
+Track dialogue and audio as continuity state:
+
+```yaml
+dialogue_audio:
+  - id: "LINE-EP05-SC03-01"
+    speaker: "CHAR-01"
+    text: ""
+    status: proposed
+    timing: ""
+    pause_interruptions: ""
+    subtitle_text: ""
+    language_pronunciation: ""
+    audio_approval: pending
+    edit_relationship: "J-cut | L-cut | sync | none"
+```
+
+Exact wording, speaker, order, timing, subtitle text, translation, and approval status must be preserved when a scene is revised.
+
 ### Show historian / franchise archivist — activate for established universes
 
 Cross-reference characters, timelines, locations, rules, prior episodes, reference assets, and canonical constraints. Flag discrepancies and future-conflict risks. Do not silently decide which canon is correct.

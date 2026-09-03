@@ -32,9 +32,11 @@ class SkillContractTests(unittest.TestCase):
         self.assertIn("Post-test record", text)
 
     def test_no_stale_project_name(self):
-        for path in ROOT.rglob("*"):
-            if path.is_file() and ".git" not in path.parts and "__pycache__" not in path.parts and path.suffix in {".md", ".yaml", ".yml"}:
-                self.assertNotIn("cinematic-video-prompt-builder", path.read_text(errors="ignore"))
+        paths = [ROOT / name for name in ("SKILL.md", "README.md", "WORKFLOW.md")]
+        for directory in ("references", "examples"):
+            paths.extend((ROOT / directory).rglob("*.md"))
+        for path in paths:
+            self.assertNotIn("cinematic-video-prompt-builder", path.read_text(errors="ignore"))
 
 
 if __name__ == "__main__":

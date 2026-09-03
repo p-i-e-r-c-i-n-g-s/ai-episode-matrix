@@ -14,3 +14,5 @@ UNVERIFIED: [unknown syntax or capability]
 ```
 
 ChatGPT image generation should use complete natural-language scene description. Midjourney image-base prompts should be concise and comma-separated, with only currently supported parameters. Image-to-video prompts should explicitly preserve the supplied image, then separate motion, camera, physics, timing, and exclusions. Verify live syntax before asserting support.
+
+When a platform has prompt-length or control limits, preserve information in this order: identity and asset references; composition and geography; action and state transition; lighting and visual contract; aesthetic texture; optional embellishment. Never shorten away continuity-critical fields first.

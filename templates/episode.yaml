@@ -1,0 +1,9 @@
+episode: {id: "EP-01", title: "", version: 1, status: proposed}
+logline: ""
+beginning_state: ""
+ending_state: ""
+next_goal: ""
+arc_beats: []
+scenes: []
+dialogue_audio: []
+acceptance: {runtime_target: "", criteria: []}

@@ -16,6 +16,13 @@ session-handoff.md
 
 On startup, scan for these files, match the requested series/episode, and load the latest approved records. File existence is not approval; preserve explicit status fields.
 
+Offer two setup paths before asking detailed questions:
+
+- **Quick setup**: project/episode, latest approved state, next goal, available assets, and next shot requirement.
+- **Full setup**: quick setup plus series bible, episode arc, scene plan, asset index, visual contract, dialogue/audio state, and acceptance criteria.
+
+Quick setup is valid only when deferred fields do not block the next shot. Mark deferred fields `[DEFERRED]` and upgrade to full setup before they affect continuity.
+
 ## Session entry
 
 Classify the session before generation:
@@ -147,6 +154,24 @@ planned → generated → reviewed → approved
 ```
 
 Only `approved` state propagates as canon. A generated result is not canon until the user approves it.
+
+## Conflict precedence
+
+When records disagree, use this order and report the conflict:
+
+```text
+latest approved shot state
+→ approved scene revision
+→ approved episode revision
+→ series bible baseline
+→ proposed or unapproved material
+```
+
+If two records have the same authority and timestamp, mark `[CONFLICT—USER DECISION REQUIRED]`. Never silently reconcile canon.
+
+## Scene lock states
+
+Scenes use: `planned → blocked → images-approved → motion-approved → locked`. A locked scene cannot be changed indirectly by a later prompt; create a revision, identify downstream effects, and obtain approval before reopening it.
 
 ## Episode workflow
 

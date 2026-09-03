@@ -1,0 +1,7 @@
+series: {id: "SERIES-01", title: "", version: 1, status: proposed}
+premise: ""
+visual_contract: {format: "", lens_family: "", palette: "", lighting: "", grammar: ""}
+world: {rules: [], locations: [], time_weather_logic: ""}
+characters: []
+props: []
+canon_notes: []

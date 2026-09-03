@@ -1,0 +1,3 @@
+episode: {id: "EP-05", title: "The Return Pulse", version: 1, status: approved}
+beginning_state: "Mara carries the damaged receiver"
+next_goal: "Reveal the signal responds to movement"

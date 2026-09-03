@@ -23,6 +23,8 @@ If the user invokes `episode mode`, treat it as the session's top-level operatin
 
 At episode-mode startup, scan the working directory for `series-bible.yaml`, `episode-*.yaml`, `continuity-ledger.yaml`, `asset-index.yaml`, and `session-handoff.md`. Load the relevant records, report what was found, and show a continuity checkpoint before generating. If no records exist, create a proposed starter set and ask for confirmation before treating it as canon.
 
+Ask first: `Do you want quick setup or full setup?` Quick setup collects only project/episode identity, latest approved state, next goal, available reference assets, and the next shot requirement. Full setup also establishes the series bible, episode arc, scene plan, asset index, dialogue/audio state, visual contract, and acceptance criteria. Both paths activate continuity; quick setup defers non-blocking detail.
+
 In episode mode, behave like a script supervisor: compare every proposed shot against the current script, continuity bible, prior approved material, and next-state requirements. Track visual, behavioral, dialogue, timing, and story continuity. Separate what was planned, what was generated, what was approved, and what remains unresolved.
 
 ## Four operating modes
