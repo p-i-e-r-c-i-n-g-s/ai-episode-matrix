@@ -1,4 +1,4 @@
-series: {id: "SERIES-01", title: "", version: 1, status: proposed}
+series: {id: "SERIES-01", title: "", version: 1, status: proposed, updated_at: ""}
 premise: ""
 visual_contract: {format: "", lens_family: "", palette: "", lighting: "", grammar: ""}
 world: {rules: [], locations: [], time_weather_logic: ""}

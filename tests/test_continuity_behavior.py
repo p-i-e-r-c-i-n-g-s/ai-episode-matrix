@@ -1,4 +1,7 @@
 import pathlib
+import shutil
+import subprocess
+import tempfile
 import unittest
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -25,6 +28,24 @@ class ContinuityBehaviorTests(unittest.TestCase):
         text = (ROOT / "references/platform-adapters.md").read_text()
         self.assertIn("identity and asset references", text)
         self.assertIn("composition and geography", text)
+
+    def test_scanner_fails_closed_for_missing_records(self):
+        with tempfile.TemporaryDirectory() as directory:
+            result = subprocess.run(["python3", str(ROOT / "scripts/check_continuity_files.py"), directory], capture_output=True, text=True)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("MISSING", result.stdout)
+
+    def test_scanner_accepts_complete_fixture_records(self):
+        with tempfile.TemporaryDirectory() as directory:
+            target = pathlib.Path(directory)
+            shutil.copy(ROOT / "templates/series-bible.yaml", target / "series-bible.yaml")
+            shutil.copy(ROOT / "templates/continuity-ledger.yaml", target / "continuity-ledger.yaml")
+            shutil.copy(ROOT / "templates/asset-index.yaml", target / "asset-index.yaml")
+            shutil.copy(ROOT / "templates/session-handoff.md", target / "session-handoff.md")
+            shutil.copy(ROOT / "tests/fixtures/episode-05.yaml", target / "episode-05.yaml")
+            result = subprocess.run(["python3", str(ROOT / "scripts/check_continuity_files.py"), directory], capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("NEXT ACTION", result.stdout)
 
 
 if __name__ == "__main__":

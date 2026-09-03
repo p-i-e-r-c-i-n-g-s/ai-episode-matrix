@@ -23,6 +23,8 @@ Offer two setup paths before asking detailed questions:
 
 Quick setup is valid only when deferred fields do not block the next shot. Mark deferred fields `[DEFERRED]` and upgrade to full setup before they affect continuity.
 
+Persist `setup_mode` (`quick` or `full`) and `updated_at` in episode/record files. Use ISO-8601 timestamps and never infer recency from filesystem order alone.
+
 ## Session entry
 
 Classify the session before generation:

@@ -1,4 +1,4 @@
-episode: {id: "EP-01", title: "", version: 1, status: proposed}
+episode: {id: "EP-01", title: "", version: 1, status: proposed, setup_mode: quick, updated_at: ""}
 logline: ""
 beginning_state: ""
 ending_state: ""

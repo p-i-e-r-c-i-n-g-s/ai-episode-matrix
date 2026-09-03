@@ -1,5 +1,8 @@
 # Session handoff
 
+SETUP MODE:
+UPDATED AT:
+
 SERIES:
 EPISODE:
 SCRIPT VERSION:
