@@ -25,7 +25,7 @@ The reference image acts as the visual anchor. The skill tells the video tool wh
 - Adapt the same creative idea for different AI generation tools.
 - Maintain script versions, continuity reports, lore, canon, and production handoffs.
 
-## Four modes inside Episode Matrix
+## Five modes inside Episode Matrix
 
 **Image-base** — Make the still image that anchors the scene.
 

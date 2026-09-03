@@ -225,7 +225,3 @@ This block may be rendered as metadata, a production note, or concise prompt pro
 ## Session handoff
 
 End an episode-mode session with the current script version, last approved shot, updated character/prop/world states, approved and unresolved changes, asset references, estimated runtime, and next recommended shot. This becomes the next session's checkpoint.
-
-## Session handoff
-
-End an episode-mode session with a resumable handoff: last approved shot, updated character/prop/world states, unresolved questions, next recommended shot, and asset references. This becomes the next session's checkpoint.

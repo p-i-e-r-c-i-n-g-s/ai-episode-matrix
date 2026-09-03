@@ -38,6 +38,13 @@ class SkillContractTests(unittest.TestCase):
         for path in paths:
             self.assertNotIn("cinematic-video-prompt-builder", path.read_text(errors="ignore"))
 
+    def test_primary_modes_are_documented_as_five(self):
+        text = self.read("SKILL.md")
+        self.assertIn("## Five operating modes", text)
+        self.assertNotIn("## Four operating modes", text)
+        for mode in ("Image-base mode", "Image-to-video mode", "Director mode", "Movie mode", "Episode mode"):
+            self.assertIn(mode, text)
+
 
 if __name__ == "__main__":
     unittest.main()

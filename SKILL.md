@@ -27,7 +27,7 @@ Ask first: `Do you want quick setup or full setup?` Quick setup collects only pr
 
 In episode mode, behave like a script supervisor: compare every proposed shot against the current script, continuity bible, prior approved material, and next-state requirements. Track visual, behavioral, dialogue, timing, and story continuity. Separate what was planned, what was generated, what was approved, and what remains unresolved.
 
-## Four operating modes
+## Five operating modes
 
 1. **Image-base mode** — create the still image that will serve as the visual anchor. Define subject identity, pose, expression, environment, art direction, composition, lens perspective, lighting, palette, and output ratio. Keep the image prompt focused on a single decisive frame; do not describe motion that belongs in the next mode.
 2. **Image-to-video mode** — animate the selected image. Separate `preserve` from `animate`: preserve identity, costume, set, composition, and style; animate performance, camera, atmosphere, and physically motivated secondary motion. Specify start state, action beats, camera path, temporal pacing, end state, and unwanted changes. This is the default mode when the user says “make this image move,” “animate this,” or provides a reference image.
@@ -65,17 +65,17 @@ For every test prompt, include a compact `success criteria` section describing w
 - Use film language precisely but do not keyword-stuff. Every technical term must support a visible result.
 - Treat aesthetic choices as a composable stack. Read [aesthetic-knobs.md](references/aesthetic-knobs.md) when the user specifies film formats, stocks, flash, grain, or capture texture.
 
-## Output modes
+## Output formats
 
-Choose the smallest useful mode:
+Choose the smallest useful output format. The five operating modes above describe production context; these formats describe how to package the response:
 
 1. **Single-shot prompt** — a clean generation prompt plus controls and exclusions.
 2. **Shot list / storyboard** — timed shots with purpose, action, framing, lens, movement, light, transition, and continuity notes.
 3. **Prompt variants** — 2–3 alternatives changing one major axis only (camera, lighting, or performance), with tradeoffs.
 4. **Prompt refinement** — preserve locked details, identify conflicts, and revise only requested dimensions.
-5. **Director mode** — emulate a director's formal system through observable choices, not a name-only style tag.
-6. **Movie mode** — emulate a specific film or franchise's visual grammar, motifs, pacing, and continuity constraints.
-7. **Episode mode** — plan and generate connected scenes with persistent story and visual state.
+5. **Director-informed prompt** — translate a director's formal system through observable choices, not a name-only style tag.
+6. **Movie-informed prompt** — translate a specific film or franchise's visual grammar, motifs, pacing, and continuity constraints.
+7. **Episode package** — plan and generate connected scenes with persistent story and visual state.
 
 ## Director mode
 
@@ -124,8 +124,6 @@ If the user did not specify a model, make a model-agnostic prompt and state that
 Ask no more than 1–2 high-value questions at a time. If enough information exists, proceed with labeled assumptions. Offer concrete visual choices with consequences, e.g. “35mm puts the viewer inside the space; 85mm compresses the background and isolates the face.” Do not force a questionnaire when a strong draft can reveal what needs deciding.
 
 For a sequence, maintain a continuity table and a shot-to-shot motion/edit map. For a single image-to-video prompt, explicitly distinguish what must remain unchanged from what should move.
-
-For episodic work, build the episode plan before individual prompts. Establish a series bible, episode arc, recurring assets, and continuity ledger; assign stable IDs to episodes, scenes, shots, characters, props, and locations. Every prompt must inherit from the active ledger and record what changed.
 
 For episodic work, build the episode plan before individual prompts. Establish a series bible, episode arc, recurring assets, and a continuity ledger; assign stable IDs to episodes, scenes, shots, characters, props, and locations. Every new image or video prompt must inherit from the current ledger and explicitly record what changed.
 

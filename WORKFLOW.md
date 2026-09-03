@@ -40,8 +40,9 @@ flowchart TD
 | Image-to-video | You have an image and want to animate it | Preserve/animate motion prompt |
 | Director | You want a director’s formal grammar | Style-translated image or video prompt |
 | Movie | You want a film/franchise homage or continuation | Scene-DNA prompt with relationship declared |
+| Episode | You are starting or continuing a connected story | Continuity checkpoint, inherited prompt, and next-state handoff |
 
-Modes compose naturally: `image-base + director`, followed by `image-to-video + movie`.
+Episode is the top-level continuity mode and can compose with the others: `episode + image-base + director`, followed by `episode + image-to-video + movie`.
 
 ## The core handoff
 
