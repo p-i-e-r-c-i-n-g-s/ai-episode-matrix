@@ -17,7 +17,7 @@
       .dash{fill:none;stroke:#64748b;stroke-width:3;stroke-dasharray:10 8;marker-end:url(#arrow)}
     </style>
   </defs>
-  <rect width="1600" height="1200" fill="white"/>
+  <rect width="1600" height="1500" fill="white"/>
   <text x="800" y="55" font-size="34" font-weight="700" text-anchor="middle">Cinematic Video Prompt Builder</text>
   <text x="800" y="90" class="small">Concept → reference image → controlled motion → test → refinement</text>
 
