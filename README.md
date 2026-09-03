@@ -1,13 +1,13 @@
-# Cinematic Video Prompt Builder
+# AI Episode Matrix
 
-Turn an idea—or a single reference image—into a clear, cinematic prompt for creating AI images and videos.
+Build a continuous AI video story from episode to episode. AI Episode Matrix turns ideas and reference images into clear cinematic prompts while keeping characters, props, locations, visual style, and story state consistent.
 
-You do not need to know camera jargon or prompt engineering. Describe what you want, and the skill helps turn it into specific choices that an image or video tool can understand.
+Continuity is the main goal. Cinematic prompt engineering supports that goal.
 
 ## The simple workflow
 
 ```text
-Your idea → reference image → animate the image → short test → improve → build the episode
+Your story world → episode checkpoint → reference image → animate the image → continuity update → next scene
 ```
 
 The reference image acts as the visual anchor. The skill tells the video tool what to keep and what to change, helping protect the character, clothing, setting, lighting, and overall look.
@@ -24,7 +24,7 @@ The reference image acts as the visual anchor. The skill tells the video tool wh
 - Return to Episode 5—or any earlier installment—with a continuity checkpoint before creating new material.
 - Adapt the same creative idea for different AI generation tools.
 
-## Four modes
+## Four modes inside Episode Matrix
 
 **Image-base** — Make the still image that anchors the scene.
 
@@ -34,9 +34,9 @@ The reference image acts as the visual anchor. The skill tells the video tool wh
 
 **Movie** — Create an original homage, close emulation, or continuation-style scene based on a film or franchise’s visual language.
 
-**Episode** — Start or continue a connected story. The skill activates the continuity bible immediately, tracks what has happened, and makes each new scene inherit the correct characters, props, locations, wardrobe, lighting, and story state.
+**Episode** — The primary mode. Start or continue a connected story. It activates the continuity bible immediately, tracks what has happened, and makes each new scene inherit the correct characters, props, locations, wardrobe, lighting, and story state.
 
-Modes can be combined. For example: use `episode + image-base + director`, then continue with `episode + image-to-video + movie`.
+Modes can be combined inside Episode Matrix. For example: use `episode + image-base + director`, then continue with `episode + image-to-video + movie`.
 
 ## Building episodes
 
@@ -57,7 +57,7 @@ Start with [WORKFLOW.md](WORKFLOW.md) for the visual chart and [episode-building
 Ask for one short test shot first:
 
 ```text
-$cinematic-video-prompt-builder
+$ai-episode-matrix
 
 Use image-base mode. Create a reference-image prompt for a lone astronaut
 standing in a flooded underground station at night.
@@ -66,7 +66,7 @@ standing in a flooded underground station at night.
 After generating and selecting the image:
 
 ```text
-$cinematic-video-prompt-builder
+$ai-episode-matrix
 
 Use image-to-video mode. Treat the attached image as the visual source of truth.
 Preserve the astronaut, suit, station, lighting, and composition. Animate only
@@ -112,14 +112,14 @@ Copy this folder into your Codex skills directory:
 
 ```bash
 mkdir -p ~/.codex/skills
-cp -R cinematic-video-prompt-builder ~/.codex/skills/
+cp -R ai-episode-matrix ~/.codex/skills/
 ```
 
 Restart Codex or refresh its skills index afterward.
 
 ## Repository layout
 
-- `SKILL.md` — entrypoint instructions
+- `SKILL.md` — entrypoint instructions for AI Episode Matrix
 - `WORKFLOW.md` — newcomer workflow chart and integration guide
 - `references/episode-building.md` — series bibles, episode blueprints, and continuity ledgers
 - `agents/openai.yaml` — Codex interface metadata

@@ -1,14 +1,14 @@
-# How the skill works
+# How AI Episode Matrix works
 
-This skill turns a rough video idea—or a selected reference image—into a controlled cinematic prompt that can be tested, refined, and translated for different generation engines.
+AI Episode Matrix turns a rough story idea—or a selected reference image—into a continuous, controlled cinematic production that can be tested, refined, and extended across episodes.
 
 ## The default path
 
 ```mermaid
 flowchart TD
-    A[Raw concept] --> B{Have a reference image?}
-    B -- No --> C[Image-base mode]
-    C --> D[Generate ChatGPT image]
+    A[Story or episode idea] --> B{Have continuity context?}
+    B -- No --> C[Episode mode: create checkpoint]
+    C --> D[Plan episode and generate image]
     D --> E[Select and inspect image]
     B -- Yes --> E
     E --> F{Need a formal style?}
@@ -110,20 +110,20 @@ Create one platform-neutral creative specification first. Then request a platfor
 ## Invocation examples
 
 ```text
-$cinematic-video-prompt-builder
+$ai-episode-matrix
 
 Use image-base mode. Create a reference-image prompt for...
 ```
 
 ```text
-$cinematic-video-prompt-builder
+$ai-episode-matrix
 
 Use image-to-video mode. Treat the attached image as the visual source of truth.
 Preserve ... Animate ... Include success criteria.
 ```
 
 ```text
-$cinematic-video-prompt-builder
+$ai-episode-matrix
 
 Use image-base + director mode, then prepare the follow-up image-to-video prompt.
 ```

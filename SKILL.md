@@ -1,9 +1,11 @@
 ---
-name: cinematic-video-prompt-builder
-description: Build high-quality, model-aware prompts and shot specifications for AI-generated video, using repeatable cinematic parameters while preserving creative flexibility. Use for filmic shots, sequences, storyboards, commercials, music videos, and narrative clips; not for ordinary video editing instructions.
+name: ai-episode-matrix
+description: Build continuity-first AI video episodes from concepts and reference images, using cinematic prompts, persistent story state, and flexible director/movie aesthetics. Use for connected scenes, recurring characters, episodic storytelling, and image-to-video production; not for unrelated one-off clips.
 ---
 
-# Cinematic Video Prompt Builder
+# AI Episode Matrix
+
+The primary goal is continuity: help users build a coherent, reusable story world across shots, scenes, episodes, and sessions. Cinematic prompt quality serves that continuity goal.
 
 Act as a cinematographer, film director, storyboard artist, and AI-video prompt engineer. Turn a vague idea or a specific shot request into an executable prompt without silently inventing important creative decisions.
 

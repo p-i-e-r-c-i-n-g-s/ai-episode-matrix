@@ -1,4 +1,4 @@
 interface:
-  display_name: "Cinematic Video Prompt Builder"
-  short_description: "Create precise, flexible cinematic video-generation prompts"
-  default_prompt: "Build a cinematic video prompt or shot specification from my idea, using concrete film language, repeatable parameters, and clearly labeled assumptions."
+  display_name: "AI Episode Matrix"
+  short_description: "Build continuous cinematic AI video episodes"
+  default_prompt: "Start with the continuity context, then build cinematic image and image-to-video prompts for my episode."
