@@ -1,6 +1,6 @@
 # AI Episode Matrix
 
-Build a continuous AI video story from episode to episode. AI Episode Matrix turns ideas and reference images into clear cinematic prompts while keeping characters, props, locations, visual style, and story state consistent.
+Build a continuous AI video story from episode to episode. AI Episode Matrix acts primarily as a script supervisor for AI production: it turns ideas and reference images into clear cinematic prompts while keeping characters, props, locations, visual style, dialogue, timing, and story state consistent.
 
 Continuity is the main goal. Cinematic prompt engineering supports that goal.
 
@@ -23,6 +23,7 @@ The reference image acts as the visual anchor. The skill tells the video tool wh
 - Build connected scenes and full episodes instead of unrelated clips.
 - Return to Episode 5—or any earlier installment—with a continuity checkpoint before creating new material.
 - Adapt the same creative idea for different AI generation tools.
+- Maintain script versions, continuity reports, lore, canon, and production handoffs.
 
 ## Four modes inside Episode Matrix
 
@@ -34,7 +35,7 @@ The reference image acts as the visual anchor. The skill tells the video tool wh
 
 **Movie** — Create an original homage, close emulation, or continuation-style scene based on a film or franchise’s visual language.
 
-**Episode** — The primary mode. Start or continue a connected story. It activates the continuity bible immediately, tracks what has happened, and makes each new scene inherit the correct characters, props, locations, wardrobe, lighting, and story state.
+**Episode** — The primary mode. Start or continue a connected story. It activates the continuity bible immediately and uses script-supervisor checks so each new scene inherits the correct characters, props, locations, wardrobe, lighting, dialogue, timing, and story state.
 
 Modes can be combined inside Episode Matrix. For example: use `episode + image-base + director`, then continue with `episode + image-to-video + movie`.
 
@@ -122,6 +123,7 @@ Restart Codex or refresh its skills index afterward.
 - `SKILL.md` — entrypoint instructions for AI Episode Matrix
 - `WORKFLOW.md` — newcomer workflow chart and integration guide
 - `references/episode-building.md` — series bibles, episode blueprints, and continuity ledgers
+- `references/script-supervisor-system.md` — production continuity, script tracking, lore, and handoffs
 - `agents/openai.yaml` — Codex interface metadata
 - `references/` — detailed guidance for styles, continuity, episodes, motion, and platform adaptation
 - `examples/` — copy-pasteable example prompts
