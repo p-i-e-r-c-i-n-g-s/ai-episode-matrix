@@ -19,6 +19,8 @@ It supports four composable modes:
 
 It also includes platform-adapter guidance, aesthetic knobs, multi-shot continuity, motion grammar, and an evaluation rubric.
 
+Start with [WORKFLOW.md](WORKFLOW.md) for the visual decision chart, first-test recipe, and integration guidance.
+
 ## Install globally
 
 Copy this folder into your Codex skills directory:
@@ -48,6 +50,7 @@ Build a movie-mode homage to an 1980s practical-effects adventure: original char
 ## Repository layout
 
 - `SKILL.md` — entrypoint instructions
+- `WORKFLOW.md` — newcomer workflow chart and integration guide
 - `agents/openai.yaml` — Codex interface metadata
 - `references/` — progressive-disclosure schemas, mode guidance, terminology, continuity, and evaluation
 - `examples/` — copy-pasteable example outputs
