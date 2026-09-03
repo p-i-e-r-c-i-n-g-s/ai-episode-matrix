@@ -21,7 +21,7 @@ The reference image acts as the visual anchor. The skill tells the video tool wh
 - Control camera movement, lenses, lighting, film texture, flash, grain, and color.
 - Keep characters, props, locations, wardrobe, and lighting consistent.
 - Build connected scenes and full episodes instead of unrelated clips.
-- Return to Episode 5—or any earlier installment—with a continuity checkpoint before creating new material.
+- Return to any earlier episode with a continuity checkpoint before creating new material.
 - Adapt the same creative idea for different AI generation tools.
 - Hand off an approved ChatGPT-generated still to Seedance with explicit preserve/transform instructions.
 - Maintain script versions, continuity reports, lore, canon, and production handoffs.
@@ -65,6 +65,8 @@ Continuity records are versioned and validated fail-closed. See [versioning-and-
 The test suite includes offline platform-generation contracts. Live generation tests are not run by default because each engine requires separate credentials, quotas, endpoints, and changing APIs; run a real smoke test in the chosen platform after reviewing the generated prompt and record the result in the episode ledger.
 
 Start with [WORKFLOW.md](WORKFLOW.md) for the visual chart and [episode-building.md](references/episode-building.md) for the episode process.
+
+For the common still-to-video path, see the [ChatGPT Image Gen → Seedance example](examples/chatgpt-to-seedance.md) and [Seedance adapter](references/seedance-adapter.md).
 
 ## Start using it
 
@@ -143,6 +145,7 @@ Restart Codex or refresh its skills index afterward.
 - `agents/openai.yaml` — Codex interface metadata
 - `references/` — detailed guidance for styles, continuity, episodes, motion, and platform adaptation
 - `templates/seedance-image-to-video.txt` and `templates/video-take.yaml` — Seedance prompt and generated-take records
+- `templates/seedance-reference-pack.txt` — optional multi-reference role map
 - `examples/` — copy-pasteable example prompts
 
 Platform syntax changes over time. The skill deliberately separates the creative specification from engine-specific translation and marks unsupported or unverified controls.

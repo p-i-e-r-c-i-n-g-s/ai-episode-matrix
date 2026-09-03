@@ -108,6 +108,10 @@ Use the skill for generation and shot intent; keep clipping, reframing, subtitle
 
 Create one platform-neutral creative specification first. Then request a platform pack. The skill should translate structure and preserve intent while marking unsupported or unverified engine controls instead of inventing syntax.
 
+### ChatGPT image → Seedance video
+
+Generate and approve the still first. Then send that exact image to Seedance with `PRESERVE`, `TRANSFORM`, timing/end-state, optional audio, and `AVOID` sections. Record the image version, Seedance model/prompt versions, settings, output take, observed failures, and approval status in a video-take record.
+
 ## Invocation examples
 
 ```text
