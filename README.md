@@ -1,25 +1,77 @@
 # Cinematic Video Prompt Builder
 
-A Codex skill for turning raw concepts and reference images into controllable, cinematic AI image and video prompts.
+Turn an idea—or a single reference image—into a clear, cinematic prompt for creating AI images and videos.
 
-## What it does
+You do not need to know camera jargon or prompt engineering. Describe what you want, and the skill helps turn it into specific choices that an image or video tool can understand.
 
-The skill is designed around the common workflow:
+## The simple workflow
 
 ```text
-concept → image-base prompt → selected image → image-to-video prompt → short test → targeted refinement
+Your idea → reference image → animate the image → short test → improve → build the episode
 ```
 
-It supports four composable modes:
+The reference image acts as the visual anchor. The skill tells the video tool what to keep and what to change, helping protect the character, clothing, setting, lighting, and overall look.
 
-- **Image-base** — create the still image that anchors continuity.
-- **Image-to-video** — animate that image while preserving identity, composition, wardrobe, lighting, and production design.
-- **Director** — translate a director’s formal grammar into observable choices.
-- **Movie** — create an homage, close emulation, or continuation using a film’s visual grammar.
+## What you can use it for
 
-It also includes platform-adapter guidance, aesthetic knobs, multi-shot continuity, episode building, motion grammar, and an evaluation rubric.
+- Create a cinematic starting image.
+- Turn that image into a moving shot.
+- Choose a director-inspired visual approach.
+- Create a movie or franchise homage with original characters and scenes.
+- Control camera movement, lenses, lighting, film texture, flash, grain, and color.
+- Keep characters, props, locations, wardrobe, and lighting consistent.
+- Build connected scenes and full episodes instead of unrelated clips.
+- Adapt the same creative idea for different AI generation tools.
 
-Start with [WORKFLOW.md](WORKFLOW.md) for the visual decision chart, first-test recipe, and integration guidance.
+## Four modes
+
+**Image-base** — Make the still image that anchors the scene.
+
+**Image-to-video** — Animate the selected image while preserving the important visual details.
+
+**Director** — Apply a director’s recognizable visual grammar—framing, movement, lighting, pacing, and mood—to an original idea.
+
+**Movie** — Create an original homage, close emulation, or continuation-style scene based on a film or franchise’s visual language.
+
+Modes can be combined. For example: create an image with `image-base + director`, then animate it with `image-to-video + movie`.
+
+## Building episodes
+
+For connected storytelling, the skill can maintain a series bible and continuity ledger. It tracks:
+
+- Who each character is and what they are wearing
+- Where characters and props are positioned
+- Damage, ownership, and condition of props
+- Location, time, weather, lighting, and screen direction
+- What changed in each shot
+- What the next shot must inherit
+- How an episode begins, develops, and ends
+
+Start with [WORKFLOW.md](WORKFLOW.md) for the visual chart and [episode-building.md](references/episode-building.md) for the episode process.
+
+## Start using it
+
+Ask for one short test shot first:
+
+```text
+$cinematic-video-prompt-builder
+
+Use image-base mode. Create a reference-image prompt for a lone astronaut
+standing in a flooded underground station at night.
+```
+
+After generating and selecting the image:
+
+```text
+$cinematic-video-prompt-builder
+
+Use image-to-video mode. Treat the attached image as the visual source of truth.
+Preserve the astronaut, suit, station, lighting, and composition. Animate only
+a slow turn toward a distant light and subtle ripples in the water.
+Include success criteria.
+```
+
+The first test should use one subject, one main action, one camera move, and one environmental movement. This makes it easier to see what needs fixing.
 
 ## Workflow at a glance
 
@@ -62,29 +114,14 @@ cp -R cinematic-video-prompt-builder ~/.codex/skills/
 
 Restart Codex or refresh its skills index afterward.
 
-## Example requests
-
-```text
-Create an image-base prompt for a lone astronaut standing in a flooded subway station.
-Use 65/70mm large-format presentation, restrained Portra-like color, and director mode inspired by Carpenter’s spatial suspense.
-```
-
-```text
-Use the attached image as the visual source of truth. In image-to-video mode, animate only the astronaut turning toward a distant light while the camera makes a slow lateral track. Preserve identity, suit design, station geometry, palette, and lighting.
-```
-
-```text
-Build a movie-mode homage to an 1980s practical-effects adventure: original characters, readable geography, warm practical light, tactile production design, and a controlled action reveal.
-```
-
 ## Repository layout
 
 - `SKILL.md` — entrypoint instructions
 - `WORKFLOW.md` — newcomer workflow chart and integration guide
 - `references/episode-building.md` — series bibles, episode blueprints, and continuity ledgers
 - `agents/openai.yaml` — Codex interface metadata
-- `references/` — progressive-disclosure schemas, mode guidance, terminology, continuity, and evaluation
-- `examples/` — copy-pasteable example outputs
+- `references/` — detailed guidance for styles, continuity, episodes, motion, and platform adaptation
+- `examples/` — copy-pasteable example prompts
 
 Platform syntax changes over time. The skill deliberately separates the creative specification from engine-specific translation and marks unsupported or unverified controls.
 
