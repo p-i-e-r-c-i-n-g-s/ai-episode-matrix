@@ -10,6 +10,7 @@ except ImportError:
     raise SystemExit(2)
 
 ROOT = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else ".").resolve()
+SCHEMA_VERSION = 1
 REQUIRED = ("series-bible.yaml", "continuity-ledger.yaml", "asset-index.yaml", "session-handoff.md")
 STATUSES = {"proposed", "generated", "reviewed", "approved", "rejected", "superseded", "unresolved", "pending"}
 errors = []
@@ -39,6 +40,9 @@ series = load("series-bible.yaml")
 ledger = load("continuity-ledger.yaml")
 assets = load("asset-index.yaml")
 handoff = load("session-handoff.md")
+for name, record in (("series-bible.yaml", series), ("continuity-ledger.yaml", ledger), ("asset-index.yaml", assets)):
+    if record and record.get("schema_version") != SCHEMA_VERSION:
+        errors.append(f"INVALID {name}: schema_version must be {SCHEMA_VERSION}")
 episode_data = []
 for path in sorted(ROOT.glob("episode-*.yaml")):
     data = load(path.name)
@@ -49,8 +53,12 @@ for path in sorted(ROOT.glob("episode-*.yaml")):
     episode_data.append(data)
 if series and not isinstance(series.get("series"), dict):
     errors.append("INVALID series-bible.yaml: missing series mapping")
+elif series and not series["series"].get("id"):
+    errors.append("INVALID series-bible.yaml: series.id is required")
 if ledger and "episode_id" not in ledger:
     errors.append("INVALID continuity-ledger.yaml: missing episode_id")
+if ledger and not isinstance(ledger.get("states"), list):
+    errors.append("INVALID continuity-ledger.yaml: states must be a list")
 asset_records = assets.get("assets", [])
 if not isinstance(asset_records, list):
     errors.append("INVALID asset-index.yaml: assets must be a list")
@@ -63,6 +71,8 @@ for asset in asset_records:
         errors.append("INVALID asset-index.yaml: every asset needs id and version")
     if asset.get("status") and asset["status"] not in STATUSES:
         errors.append(f"INVALID asset-index.yaml: unsupported status for {asset.get('id', '?')}")
+if ledger and not isinstance(ledger.get("unresolved"), list):
+    errors.append("INVALID continuity-ledger.yaml: unresolved must be a list")
 for error in errors:
     print(error)
 if errors:

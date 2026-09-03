@@ -141,5 +141,6 @@ Before declaring an episode complete, run the acceptance gate in [episode-buildi
 - Read [continuity-system.md](references/continuity-system.md) for multi-shot sequences or recurring characters/props.
 - Read [episode-building.md](references/episode-building.md) for connected episodes, series bibles, continuity ledgers, and installment planning.
 - Read [script-supervisor-system.md](references/script-supervisor-system.md) for the production-control role, continuity reports, timing, revisions, lore, and handoffs.
+- Read [versioning-and-migrations.md](references/versioning-and-migrations.md) before changing continuity-record fields or resuming an older project.
 - Read [evaluation-rubric.md](references/evaluation-rubric.md) when testing, comparing, or revising prompts.
 - Read [aesthetic-terminology.md](references/aesthetic-terminology.md) when using film stocks, formats, or presentation references.
