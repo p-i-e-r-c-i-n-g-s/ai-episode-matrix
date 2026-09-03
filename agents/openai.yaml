@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cinematic Video Prompt Builder"
+  short_description: "Create precise, flexible cinematic video-generation prompts"
+  default_prompt: "Build a cinematic video prompt or shot specification from my idea, using concrete film language, repeatable parameters, and clearly labeled assumptions."
