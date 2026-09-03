@@ -76,7 +76,7 @@ if ledger and not isinstance(ledger.get("unresolved"), list):
 for path in sorted(ROOT.glob("video-take-*.yaml")):
     take_record = load(path.name)
     take = take_record.get("take")
-    required_take_fields = ("id", "episode_id", "shot_id", "image_prompt_version", "source_image_id", "model_version", "video_prompt_version", "generation_settings", "output_take_id", "observed_continuity_failures", "approval_status")
+    required_take_fields = ("id", "episode_id", "shot_id", "image_prompt_version", "source_image_id", "model_version", "video_prompt_version", "generation_settings", "output_take_id", "observed_continuity_failures", "approval_status", "reviewed_at", "reviewed_by", "review_notes")
     if not isinstance(take, dict):
         errors.append(f"INVALID {path.name}: missing take mapping")
         continue

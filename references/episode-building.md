@@ -8,7 +8,7 @@ Use these filenames so later sessions can resume without relying on chat history
 
 ```text
 series-bible.yaml
-episode-05.yaml
+episode-XX.yaml
 continuity-ledger.yaml
 asset-index.yaml
 session-handoff.md

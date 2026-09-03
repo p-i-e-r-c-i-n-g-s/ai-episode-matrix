@@ -138,6 +138,7 @@ Before declaring an episode complete, run the acceptance gate in [episode-buildi
 - Read [director-movie-modes.md](references/director-movie-modes.md) for the attached JSON-derived director and movie/franchise style library.
 - Read [reference-image-analysis.md](references/reference-image-analysis.md) before writing image-to-video instructions for an available image.
 - Read [platform-adapters.md](references/platform-adapters.md) when the user names a generation engine or requests a platform pack.
+- Read [platform-verification.md](references/platform-verification.md) when platform support, syntax, or model behavior may have changed.
 - Read [seedance-adapter.md](references/seedance-adapter.md) for ChatGPT Image Gen → Seedance image-to-video work, Seedance reference roles, and failure diagnosis.
 - Read [motion-grammar.md](references/motion-grammar.md) when animating a still or designing complex movement.
 - Read [continuity-system.md](references/continuity-system.md) for multi-shot sequences or recurring characters/props.

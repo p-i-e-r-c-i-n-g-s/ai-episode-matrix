@@ -53,7 +53,7 @@ For connected storytelling, the skill can maintain a series bible and continuity
 - What the next shot must inherit
 - How an episode begins, develops, and ends
 
-For a returning project, keep these records in the episode folder: `series-bible.yaml`, `episode-05.yaml`, `continuity-ledger.yaml`, `asset-index.yaml`, and `session-handoff.md`. Episode mode scans for them and reconstructs a checkpoint before continuing. Starter files are available in [`templates/`](templates/).
+For a returning project, keep these records in the episode folder: `series-bible.yaml`, `episode-XX.yaml`, `continuity-ledger.yaml`, `asset-index.yaml`, and `session-handoff.md`. Episode mode scans for them and reconstructs a checkpoint before continuing. Starter files are available in [`templates/`](templates/).
 
 To check a project folder for missing or malformed records:
 
@@ -64,6 +64,8 @@ python3 scripts/check_continuity_files.py path/to/episode-project
 Continuity records are versioned and validated fail-closed. See [versioning-and-migrations.md](references/versioning-and-migrations.md) before changing their shape. Check repository documentation links with `python3 scripts/check_markdown_links.py .`.
 
 The test suite includes offline platform-generation contracts. Live generation tests are not run by default because each engine requires separate credentials, quotas, endpoints, and changing APIs; run a real smoke test in the chosen platform after reviewing the generated prompt and record the result in the episode ledger.
+
+Platform syntax is intentionally treated as versioned reference material. Recheck a platform adapter when its model/interface changes, and record the verified date and source in the adapter. Generated takes require an explicit review note and approval status; prompt-only work is never marked as generated.
 
 Start with [WORKFLOW.md](WORKFLOW.md) for the visual chart and [episode-building.md](references/episode-building.md) for the episode process.
 
@@ -144,10 +146,12 @@ Restart Codex or refresh its skills index afterward.
 - `references/episode-building.md` — series bibles, episode blueprints, and continuity ledgers
 - `references/script-supervisor-system.md` — production continuity, script tracking, lore, and handoffs
 - `references/cinematography-discipline.md` — practical camera, lighting, blocking, physics, and optics vocabulary
+- `references/platform-verification.md` — how to verify changing engine behavior
 - `agents/openai.yaml` — Codex interface metadata
 - `references/` — detailed guidance for styles, continuity, episodes, motion, and platform adaptation
 - `templates/seedance-image-to-video.txt` and `templates/video-take.yaml` — Seedance prompt and generated-take records
 - `templates/seedance-reference-pack.txt` — optional multi-reference role map
+- `templates/video-take.yaml` — generated take, review, and approval record
 - `examples/` — copy-pasteable example prompts
 
 Platform syntax changes over time. The skill deliberately separates the creative specification from engine-specific translation and marks unsupported or unverified controls.

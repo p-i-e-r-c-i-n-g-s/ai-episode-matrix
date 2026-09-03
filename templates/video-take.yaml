@@ -15,6 +15,9 @@ take:
   output_take_id: ""
   observed_continuity_failures: []
   approval_status: pending
+  reviewed_at: ""
+  reviewed_by: ""
+  review_notes: ""
   audio: {asset_id: "", dialogue: "", speaker: "", lip_sync: pending, ambience: "", music: ""}
   created_at: ""
   notes: ""
