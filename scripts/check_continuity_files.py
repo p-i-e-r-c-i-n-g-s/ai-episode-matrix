@@ -46,6 +46,8 @@ for name, record in (("series-bible.yaml", series), ("continuity-ledger.yaml", l
 episode_data = []
 for path in sorted(ROOT.glob("episode-*.yaml")):
     data = load(path.name)
+    if data and data.get("schema_version") != SCHEMA_VERSION:
+        errors.append(f"INVALID {path.name}: schema_version must be {SCHEMA_VERSION}")
     if not isinstance(data.get("episode"), dict):
         errors.append(f"INVALID {path.name}: missing episode mapping")
     elif data["episode"].get("status") not in STATUSES:
@@ -87,6 +89,17 @@ for path in sorted(ROOT.glob("video-take-*.yaml")):
         errors.append(f"INVALID {path.name}: unsupported approval_status")
     if not isinstance(take.get("generation_settings"), dict):
         errors.append(f"INVALID {path.name}: generation_settings must be a mapping")
+audio_plan = ROOT / "music-video-audio-plan.yaml"
+if audio_plan.exists():
+    record = load(audio_plan.name)
+    if record.get("schema_version") != SCHEMA_VERSION:
+        errors.append(f"INVALID {audio_plan.name}: schema_version must be {SCHEMA_VERSION}")
+    if not isinstance(record.get("audio"), dict):
+        errors.append(f"INVALID {audio_plan.name}: audio must be a mapping")
+    if not isinstance(record.get("edit_decision_list"), list):
+        errors.append(f"INVALID {audio_plan.name}: edit_decision_list must be a list")
+    if not isinstance(record.get("quality_gates"), dict):
+        errors.append(f"INVALID {audio_plan.name}: quality_gates must be a mapping")
 for error in errors:
     print(error)
 if errors:

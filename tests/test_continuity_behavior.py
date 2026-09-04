@@ -14,6 +14,7 @@ class ContinuityBehaviorTests(unittest.TestCase):
             self.assertTrue((templates / name).exists())
         self.assertTrue((templates / "video-take.yaml").exists())
         self.assertTrue((templates / "music-video-audio-plan.yaml").exists())
+        self.assertIn("schema_version: 1", (templates / "episode.yaml").read_text())
 
     def test_quick_and_full_setup_are_distinct(self):
         text = (ROOT / "SKILL.md").read_text()
@@ -46,6 +47,7 @@ class ContinuityBehaviorTests(unittest.TestCase):
             shutil.copy(ROOT / "templates/session-handoff.md", target / "session-handoff.md")
             shutil.copy(ROOT / "tests/fixtures/episode-05.yaml", target / "episode-05.yaml")
             shutil.copy(ROOT / "templates/video-take.yaml", target / "video-take-01.yaml")
+            shutil.copy(ROOT / "templates/music-video-audio-plan.yaml", target / "music-video-audio-plan.yaml")
             result = subprocess.run(["python3", str(ROOT / "scripts/check_continuity_files.py"), directory], capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn("NEXT ACTION", result.stdout)
