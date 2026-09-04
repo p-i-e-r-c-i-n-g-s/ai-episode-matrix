@@ -46,6 +46,7 @@ flowchart TD
 Episode is the top-level continuity mode and can compose with the others: `episode + image-base + director`, followed by `episode + image-to-video + movie`.
 
 Music-video mode is a compact continuity mode: plan to beat/lyric markers, separate performance from narrative coverage, and choose either frequent edits or deliberate one-take choreography.
+Start with `templates/music-video-audio-plan.yaml` when a track is available; use it for audio version, beat markers, lyrics/text treatment, edit decisions, and quality gates.
 
 ## The core handoff
 

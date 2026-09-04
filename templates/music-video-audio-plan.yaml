@@ -1,0 +1,19 @@
+schema_version: 1
+audio:
+  id: "AUDIO-01_v01"
+  path_or_url: ""
+  status: proposed
+  rights_status: ""
+  duration_seconds: ""
+  bpm: ""
+  time_signature: ""
+  sections: []
+  lyrics_or_transcript: ""
+  lyrics_status: pending
+  beat_markers: []
+edit_decision_list: []
+quality_gates:
+  audio_timing: pending
+  visual_plan: pending
+  shot_review: pending
+  final_export: pending

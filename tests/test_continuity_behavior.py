@@ -13,6 +13,7 @@ class ContinuityBehaviorTests(unittest.TestCase):
         for name in ("series-bible.yaml", "episode.yaml", "continuity-ledger.yaml", "asset-index.yaml", "session-handoff.md"):
             self.assertTrue((templates / name).exists())
         self.assertTrue((templates / "video-take.yaml").exists())
+        self.assertTrue((templates / "music-video-audio-plan.yaml").exists())
 
     def test_quick_and_full_setup_are_distinct(self):
         text = (ROOT / "SKILL.md").read_text()

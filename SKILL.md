@@ -34,7 +34,7 @@ In episode mode, behave like a script supervisor: compare every proposed shot ag
 3. **Director mode** — apply a director's formal system to the image-base or image-to-video prompt. The director influences framing, movement, lighting, blocking, pacing, sound, and production design, but does not replace the user's subject or story.
 4. **Movie mode** — apply a specific film or franchise's scene grammar. Identify whether it is homage, close emulation, or continuation, then translate motif, period, palette, camera, editorial rhythm, and sound into original, concrete choices.
 5. **Episode mode** — build or continue a connected episode using a series bible, episode arc, scene states, asset inventory, and continuity ledger. This mode composes the other modes.
-6. **Music-video mode** — create a compact, beat-driven sequence with a visual hook, performance/narrative coverage, frequent cuts or deliberate one-take choreography, and continuity across selected images and takes.
+6. **Music-video mode** — start from a track or audio brief when available, then create a compact, beat-driven sequence with a visual hook, performance/narrative coverage, frequent cuts or deliberate one-take choreography, and continuity across selected images and takes.
 
 Modes can be composed: `image-base + director`, then `image-to-video + movie`. Always state the active mode(s) in the output.
 

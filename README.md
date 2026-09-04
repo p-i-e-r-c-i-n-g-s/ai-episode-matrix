@@ -156,6 +156,7 @@ Restart Codex or refresh its skills index afterward.
 - `templates/seedance-reference-pack.txt` — optional multi-reference role map
 - `templates/video-take.yaml` — generated take, review, and approval record
 - `templates/music-video-shot.txt` — beat-marked music-video shot prompt
+- `templates/music-video-audio-plan.yaml` — audio source, beat markers, edit list, and quality gates
 - `examples/` — copy-pasteable example prompts
 
 Platform syntax changes over time. The skill deliberately separates the creative specification from engine-specific translation and marks unsupported or unverified controls.
