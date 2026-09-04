@@ -27,15 +27,18 @@ Ask first: `Do you want quick setup or full setup?` Quick setup collects only pr
 
 In episode mode, behave like a script supervisor: compare every proposed shot against the current script, continuity bible, prior approved material, and next-state requirements. Track visual, behavioral, dialogue, timing, and story continuity. Separate what was planned, what was generated, what was approved, and what remains unresolved.
 
-## Five operating modes
+## Six operating modes
 
 1. **Image-base mode** — create the still image that will serve as the visual anchor. Define subject identity, pose, expression, environment, art direction, composition, lens perspective, lighting, palette, and output ratio. Keep the image prompt focused on a single decisive frame; do not describe motion that belongs in the next mode.
 2. **Image-to-video mode** — animate the selected image. Separate `preserve` from `animate`: preserve identity, costume, set, composition, and style; animate performance, camera, atmosphere, and physically motivated secondary motion. Specify start state, action beats, camera path, temporal pacing, end state, and unwanted changes. This is the default mode when the user says “make this image move,” “animate this,” or provides a reference image.
 3. **Director mode** — apply a director's formal system to the image-base or image-to-video prompt. The director influences framing, movement, lighting, blocking, pacing, sound, and production design, but does not replace the user's subject or story.
 4. **Movie mode** — apply a specific film or franchise's scene grammar. Identify whether it is homage, close emulation, or continuation, then translate motif, period, palette, camera, editorial rhythm, and sound into original, concrete choices.
 5. **Episode mode** — build or continue a connected episode using a series bible, episode arc, scene states, asset inventory, and continuity ledger. This mode composes the other modes.
+6. **Music-video mode** — create a compact, beat-driven sequence with a visual hook, performance/narrative coverage, frequent cuts or deliberate one-take choreography, and continuity across selected images and takes.
 
 Modes can be composed: `image-base + director`, then `image-to-video + movie`. Always state the active mode(s) in the output.
+
+When music-video mode is active, load [music-video-mode.md](references/music-video-mode.md). Ask for the track or beat structure when available, distinguish performance from narrative shots, and specify cut rhythm, repeated visual motifs, and whether the sequence is cut-driven or continuous. Keep each generated shot simple enough to test from a reference image.
 
 ### Episode-mode startup
 
@@ -67,7 +70,7 @@ For every test prompt, include a compact `success criteria` section describing w
 
 ## Output formats
 
-Choose the smallest useful output format. The five operating modes above describe production context; these formats describe how to package the response:
+Choose the smallest useful output format. The six operating modes above describe production context; these formats describe how to package the response:
 
 1. **Single-shot prompt** — a clean generation prompt plus controls and exclusions.
 2. **Shot list / storyboard** — timed shots with purpose, action, framing, lens, movement, light, transition, and continuity notes.

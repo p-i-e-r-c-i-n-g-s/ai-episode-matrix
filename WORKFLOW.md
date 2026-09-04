@@ -41,8 +41,11 @@ flowchart TD
 | Director | You want a director’s formal grammar | Style-translated image or video prompt |
 | Movie | You want a film/franchise homage or continuation | Scene-DNA prompt with relationship declared |
 | Episode | You are starting or continuing a connected story | Continuity checkpoint, inherited prompt, and next-state handoff |
+| Music video | You are building a short, beat-driven performance/narrative sequence | Beat-marked shot plan and compact image-to-video prompts |
 
 Episode is the top-level continuity mode and can compose with the others: `episode + image-base + director`, followed by `episode + image-to-video + movie`.
+
+Music-video mode is a compact continuity mode: plan to beat/lyric markers, separate performance from narrative coverage, and choose either frequent edits or deliberate one-take choreography.
 
 ## The core handoff
 

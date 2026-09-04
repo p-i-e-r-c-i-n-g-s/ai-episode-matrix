@@ -27,7 +27,7 @@ The reference image acts as the visual anchor. The skill tells the video tool wh
 - Hand off an approved ChatGPT-generated still to Seedance with explicit preserve/transform instructions.
 - Maintain script versions, continuity reports, lore, canon, and production handoffs.
 
-## Five modes inside Episode Matrix
+## Six modes inside Episode Matrix
 
 **Image-base** — Make the still image that anchors the scene.
 
@@ -38,6 +38,8 @@ The reference image acts as the visual anchor. The skill tells the video tool wh
 **Movie** — Create an original homage, close emulation, or continuation-style scene based on a film or franchise’s visual language.
 
 **Episode** — The primary mode. Start or continue a connected story. It activates the continuity bible immediately and uses script-supervisor checks so each new scene inherits the correct characters, props, locations, wardrobe, lighting, dialogue, timing, and story state.
+
+**Music video** — Build a compact, beat-driven sequence with performance and narrative shots, recurring visual motifs, and either frequent edits or a deliberate one-take choreography plan.
 
 Modes can be combined inside Episode Matrix. For example: use `episode + image-base + director`, then continue with `episode + image-to-video + movie`.
 
@@ -147,11 +149,13 @@ Restart Codex or refresh its skills index afterward.
 - `references/script-supervisor-system.md` — production continuity, script tracking, lore, and handoffs
 - `references/cinematography-discipline.md` — practical camera, lighting, blocking, physics, and optics vocabulary
 - `references/platform-verification.md` — how to verify changing engine behavior
+- `references/music-video-mode.md` — compact beat-driven continuity and music-video grammar
 - `agents/openai.yaml` — Codex interface metadata
 - `references/` — detailed guidance for styles, continuity, episodes, motion, and platform adaptation
 - `templates/seedance-image-to-video.txt` and `templates/video-take.yaml` — Seedance prompt and generated-take records
 - `templates/seedance-reference-pack.txt` — optional multi-reference role map
 - `templates/video-take.yaml` — generated take, review, and approval record
+- `templates/music-video-shot.txt` — beat-marked music-video shot prompt
 - `examples/` — copy-pasteable example prompts
 
 Platform syntax changes over time. The skill deliberately separates the creative specification from engine-specific translation and marks unsupported or unverified controls.
