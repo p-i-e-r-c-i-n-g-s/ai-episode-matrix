@@ -63,6 +63,8 @@ To check a project folder for missing or malformed records:
 python3 scripts/check_continuity_files.py path/to/episode-project
 ```
 
+The validator requires Python 3.10+ and PyYAML 6.0.2 (`python3 -m pip install PyYAML==6.0.2`). Blank starter templates intentionally fail until populated. See the [record contract](references/record-contract.md) for field ownership, invariants, and stale-write-safe updates.
+
 Continuity records are versioned and validated fail-closed. See [versioning-and-migrations.md](references/versioning-and-migrations.md) before changing their shape. Check repository documentation links with `python3 scripts/check_markdown_links.py .`.
 
 The test suite includes offline platform-generation contracts. Live generation tests are not run by default because each engine requires separate credentials, quotas, endpoints, and changing APIs; run a real smoke test in the chosen platform after reviewing the generated prompt and record the result in the episode ledger.
@@ -165,9 +167,12 @@ Platform syntax changes over time. The skill deliberately separates the creative
 
 ```bash
 python3 ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py .
+python3 scripts/validate_skill.py .
 python3 scripts/check_markdown_links.py .
 python3 -m unittest discover -s tests
 ```
+
+Before publishing generated work, review the [rights, likeness, and reference-safety policy](references/rights-and-safety.md).
 
 ## License
 

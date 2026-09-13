@@ -6,6 +6,8 @@ This library is distilled from the user's attached `director_style_analysis.json
 
 Select one primary profile. Extract only the dimensions useful to the requested shot. Make the prompt original: retain formal properties and mood, not protected characters, dialogue, logos, or copied scenes. Use the profile as a constraint system:
 
+For public or commercial work, apply [rights-and-safety.md](rights-and-safety.md). `Homage`, `close emulation`, and `continuation` describe creative distance only; none is a rights-clearance claim.
+
 `philosophy → composition → lens/format → light/color → camera → pacing → sound → motif → prompt`
 
 ## Available profiles

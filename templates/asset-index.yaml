@@ -1,4 +1,4 @@
 schema_version: 1
 updated_at: ""
 assets: []
-# Each asset: id, version, type, path_or_url, source, status, supersedes, notes
+# Each asset: id, positive integer version, type, path_or_url, source, status, supersedes, notes

@@ -1,2 +1,3 @@
-series: {id: "NS", title: "North Signal", version: 2, status: approved}
+schema_version: 1
+series: {id: "NS", title: "North Signal", version: 2, status: approved, updated_at: "2026-09-12T20:00:00Z"}
 visual_contract: {format: "35mm", lens_family: "anamorphic", palette: "midnight blue", lighting: "practical", grammar: "spatial suspense"}

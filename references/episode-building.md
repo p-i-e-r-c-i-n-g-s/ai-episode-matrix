@@ -16,6 +16,8 @@ session-handoff.md
 
 On startup, scan for these files, match the requested series/episode, and load the latest approved records. File existence is not approval; preserve explicit status fields.
 
+The authoritative field ownership and cross-record rules live in [record-contract.md](record-contract.md). Validate records before relying on a checkpoint. Starter templates are intentionally incomplete and must fail validation until their required values are filled.
+
 Offer two setup paths before asking detailed questions:
 
 - **Quick setup**: project/episode, latest approved state, next goal, available assets, and next shot requirement.

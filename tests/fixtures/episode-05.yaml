@@ -1,4 +1,5 @@
 schema_version: 1
-episode: {id: "EP-05", title: "The Return Pulse", version: 1, status: approved}
+episode: {id: "EP-05", title: "The Return Pulse", version: 1, status: approved, setup_mode: full, updated_at: "2026-09-12T20:00:00Z"}
 beginning_state: "Mara carries the damaged receiver"
+ending_state: "The signal responds to movement"
 next_goal: "Reveal the signal responds to movement"
